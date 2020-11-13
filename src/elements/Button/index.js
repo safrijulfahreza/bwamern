@@ -68,7 +68,7 @@ export default function Button(props) {
   );
 }
 
-Button.PropTypes = {
+Button.propTypes = {
   type: PropTypes.oneOf(["button", "Link"]),
   onClick: PropTypes.func,
   target: PropTypes.string,
@@ -80,6 +80,5 @@ Button.PropTypes = {
   isSmall: PropTypes.bool,
   isLarge: PropTypes.bool,
   isBlock: PropTypes.bool,
-  isExternal: PropTypes.bool,
   hasShadow: PropTypes.bool,
 };
