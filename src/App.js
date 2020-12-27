@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LandingPage from "pages/LandingPage";
+import DetailsPage from "pages/DetailsPage";
 import Example from "pages/Example";
 
 import "assets/scss/style.scss";
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Router>
         <Route path="/" component={LandingPage} exact />
+        <Route path="/properties/:id" component={DetailsPage} />
         <Route path="/example" component={Example} />
       </Router>
     </div>
