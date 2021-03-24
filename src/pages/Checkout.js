@@ -45,7 +45,8 @@ class Checkout extends Component {
 
   render() {
     const { data } = this.state;
-    const { checkout } = this.props;
+    const { checkout, page } = this.props;
+    console.log(page);
 
     if (!checkout)
       return (
@@ -79,7 +80,7 @@ class Checkout extends Component {
           <BookingInformation
             data={data}
             checkout={checkout}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout._id]}
             onChange={this.onChange}
           />
         ),
@@ -90,7 +91,7 @@ class Checkout extends Component {
         content: (
           <Payment
             data={data}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout._id]}
             checkout={checkout}
             onChange={this.onChange}
           />
@@ -202,6 +203,7 @@ class Checkout extends Component {
 
 const mapStateToProps = (state) => ({
   checkout: state.checkout,
+  page: state.page,
 });
 
 export default connect(mapStateToProps)(Checkout);
